@@ -1,0 +1,16 @@
+<!-- github_auth/templates/github_auth/home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Auth</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}!</p>
+        <a href="{% url 'account_logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'account_login' %}">Login with GitHub</a>
+    {% endif %}
+</body>
+</html>
